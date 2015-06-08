@@ -33,7 +33,7 @@ copy helloos.img ..\z_tools\qemu\fdimage0.bin
 		RESB	18				; とりあえず18バイトあけておく
 ```
 
-nask組合語言指令
+nask指令
 ```
 DB  (Data Byte)  直接在檔案裡寫入1個Byte (8 bit)
 DW  (Data Word)  直接在檔案裡寫入2個Byte (16 bit)
