@@ -10,10 +10,34 @@ copy helloos.img ..\z_tools\qemu\fdimage0.bin
 ```bat
 ..\z_tools\nask.exe helloos.nas helloos.img
 ```
+開機磁區格式以nask組合語言編寫方式
+```NASM
+		DB		0xeb, 0x4e, 0x90
+		DB		"HELLOIPL"		; ブートセクタの名前を自由に書いてよい（8バイト）
+		DW		512				; 1セクタの大きさ（512にしなければいけない）
+		DB		1				; クラスタの大きさ（1セクタにしなければいけない）
+		DW		1				; FATがどこから始まるか（普通は1セクタ目からにする）
+		DB		2				; FATの個数（2にしなければいけない）
+		DW		224				; ルートディレクトリ領域の大きさ（普通は224エントリにする）
+		DW		2880			; このドライブの大きさ（2880セクタにしなければいけない）
+		DB		0xf0			; メディアのタイプ（0xf0にしなければいけない）
+		DW		9				; FAT領域の長さ（9セクタにしなければいけない）
+		DW		18				; 1トラックにいくつのセクタがあるか（18にしなければいけない）
+		DW		2				; ヘッドの数（2にしなければいけない）
+		DD		0				; パーティションを使ってないのでここは必ず0
+		DD		2880			; このドライブ大きさをもう一度書く
+		DB		0,0,0x29		; よくわからないけどこの値にしておくといいらしい
+		DD		0xffffffff		; たぶんボリュームシリアル番号
+		DB		"HELLO-OS   "	; ディスクの名前（11バイト）
+		DB		"FAT12   "		; フォーマットの名前（8バイト）
+		RESB	18				; とりあえず18バイトあけておく
+```
+
 nask組合語言指令
 ```
-DB  (Data Byte)直接在檔案裡寫入1個Byte (8 bit)
-DW  (Data Word)直接在檔案裡寫入2個Byte (16 bit)
-DW  (Data Double-Word)直接在檔案裡寫入4個Byte (32 bit)
+DB  (Data Byte)  直接在檔案裡寫入1個Byte (8 bit)
+DW  (Data Word)  直接在檔案裡寫入2個Byte (16 bit)
+DW  (Data Double-Word)  直接在檔案裡寫入4個Byte (32 bit)
+RESB  (Reserve Byte)  保留位元組，如「RESB 10」表示空出10個Byte
 ```
 
