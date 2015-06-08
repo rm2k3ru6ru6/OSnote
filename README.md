@@ -35,9 +35,17 @@ copy helloos.img ..\z_tools\qemu\fdimage0.bin
 
 nask指令
 ```
-DB  (Data Byte)  直接在檔案裡寫入1個Byte (8 bit)
-DW  (Data Word)  直接在檔案裡寫入2個Byte (16 bit)
-DW  (Data Double-Word)  直接在檔案裡寫入4個Byte (32 bit)
-RESB  (Reserve Byte)  保留位元組，如「RESB 10」表示空出10個Byte
+DB	直接在檔案裡寫入1個Byte (8 bit)
+DW	直接在檔案裡寫入2個Byte (16 bit)
+DW	直接在檔案裡寫入4個Byte (32 bit)
+RESB	保留位元組，如「RESB 10」表示空出10個Byte
 ```
 
+####Day 2
+文字編輯器推薦使用[Notepad++](https://notepad-plus-plus.org/)。
+nask指令
+```
+ORG	從記憶體何處開始讀入程式碼
+JMP	跳躍至指定位址，如C的goto
+MOV	資料代入，如「MOV AX,0」表示將0代入AX
+```
