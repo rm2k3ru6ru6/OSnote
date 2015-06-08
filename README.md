@@ -42,10 +42,23 @@ RESB	保留位元組，如「RESB 10」表示空出10個Byte
 ```
 
 ####Day 2
-文字編輯器推薦使用[Notepad++](https://notepad-plus-plus.org/)。
+文字編輯器推薦使用[Notepad++](https://notepad-plus-plus.org/)。<br>
 nask指令
 ```
 ORG	從記憶體何處開始讀入程式碼
 JMP	跳躍至指定位址，如C的goto
-MOV	資料代入，如「MOV AX,0」表示將0代入AX
+MOV	資料代入，如「MOV AX,0」表示將0代入AX，AX = 0
+ADD	資料相加後代入，如AX = 1，「ADD AX,2」表示將2加入AX，AX = 3
+```
+暫存器
+```
+AX	累加器
+CX	計數器
+DX	資料
+BX	基底
+SP	堆疊指標
+BP	基底指標
+SI	來源索引
+DI	目的索引
+
 ```
