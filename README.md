@@ -11,8 +11,9 @@ copy helloos.img ..\z_tools\qemu\fdimage0.bin
 ..\z_tools\nask.exe helloos.nas helloos.img
 ```
 nask組合語言指令
-...**DB**  (Data Byte)直接在檔案裡寫入1個Byte (8 bit)
-...**DW**  (Data Word)直接在檔案裡寫入2個Byte (16 bit)
-...**DW**  (Data Double-Word)直接在檔案裡寫入4個Byte (32 bit)
-
+```
+DB  (Data Byte)直接在檔案裡寫入1個Byte (8 bit)
+DW  (Data Word)直接在檔案裡寫入2個Byte (16 bit)
+DW  (Data Double-Word)直接在檔案裡寫入4個Byte (32 bit)
+```
 
