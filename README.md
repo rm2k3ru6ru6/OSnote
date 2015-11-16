@@ -5,7 +5,7 @@
 copy helloos.img ..\z_tools\qemu\fdimage0.bin
 ..\z_tools\make.exe	-C ../z_tools/qemu
 ```
-使用[nask](tolset/z_tools/nask.exe)組合語言編寫[helloos.nas](projects/01_day/helloos1/helloos.nas)。
+使用[nask](tolset/z_tools/nask.exe)組合語言編寫[helloos.nas](projects/01_day/helloos2/helloos.nas)。
 將helloos.nas組譯成機器碼。<br>
 ```bat
 ..\z_tools\nask.exe helloos.nas helloos.img
